@@ -1,5 +1,25 @@
 package main
 
+/****************************
+	challenge: https://www.hackerrank.com/challenges/almost-sorted/problem
+
+	Given an array of integers, determine whether the array can be sorted in ascending order
+	using only one of the following operations one time.
+		* Swap two elements.
+		* Reverse one sub-segment.
+	Determine whether one, both or neither of the operations will complete the task. If both
+	work, choose swap.
+
+	Output format:
+	1. If the array is already sorted, output yes on the first line.
+	2. If you can sort this array using one single operation (from the two permitted operations)
+		then output yes on the first line and then:
+		a. If elements can be swapped, output swap x y in the second line. x and y are the indices
+			of the elements to be swapped, assuming that the array is indexed from 1.
+		b. Otherwise, when reversing the segment [x..y], output reverse x y in the second line.
+			x and y are the indices of the first and last elements of the subsequence to be reversed, both inclusive.
+	3. If you cannot sort the array either way, output no on the first line.
+****************************/
 import (
 	"fmt"
 )
@@ -77,10 +97,10 @@ func almostSorted(arr []int) {
 	}
 
 	if isSorted(arr, x-1) {
-		fmt.Println("Yes")
+		fmt.Println("yes")
 		fmt.Println(operation)
 	} else {
-		fmt.Println("No")
+		fmt.Println("no")
 	}
 }
 
